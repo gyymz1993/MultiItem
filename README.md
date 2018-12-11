@@ -348,8 +348,51 @@ public void register(Class<?> cls, ViewHolderManagerGroup group) {
 }
 ```
 
+
+* 最后分享一下，踩过的一个坑，列表的item里面如果有EditText，输入的内容，滑动列表的时候可能会数据错乱，要怎么有效的避免呢？查阅大量资料之后发现是因为焦点导致，解决方案如下：
+``` java
+val tagNumWatcher = object : TextWatcher {
+    override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+
+    }
+
+    override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+
+    }
+
+    override fun afterTextChanged(editable: Editable) {
+        if (editNum.hasFocus()) {//判断当前EditText是否有焦点在
+            model.foodNo = editable.toString()
+            if (!TextUtils.isEmpty(editable.toString().trim())) {
+                //搜索操作
+                listener?.onSearchNameByNum(model.foodNo)
+            }
+        }
+    }
+}
+
+editNum.onFocusChangeListener = View.OnFocusChangeListener { view, hasFocus ->
+    if (hasFocus) {
+        (view as EditText).addTextChangedListener(tagNumWatcher)
+    } else {
+        (view as EditText).removeTextChangedListener(tagNumWatcher)
+    }
+}
+
+
+ if (!TextUtils.isEmpty(edittextBean.getDefValue())) {
+            editText.setText(edittextBean.getDefValue());
+        } else {
+            //置空 必须
+             editText.setText("");
+        }
+
+
+```
+
 ## 感谢   
 在编写中感谢以下开源项目提供了很多思路   
 - https://github.com/wasabeef/recyclerview-animators
 - https://github.com/drakeet/MultiType
 - https://github.com/free46000/MultiItem
+- https://github.com/dingjinwen/RecyclerWebListDemo

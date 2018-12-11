@@ -56,27 +56,69 @@ public class DataBindActivity extends AppCompatActivity {
         adapter.register(TextSwitchBean.class, new TextAndSwitchManager());
         recyclerView.setAdapter(adapter);
         List<Object> list = new ArrayList<>();
+//        list.add(new TextBean("法兰基本信息"));
+//        //list.add(new ImageTextBean("img2", "BBB"));
+//        list.add(new TextSpinnerBean("公司名称", new String[]{"jite", "jie", "upm2", "own3","自定义"},"自定义公司名称"));
+//        list.add(new TextSpinnerBean("工厂名称", new String[]{"jite", "jie", "upm2", "own3","自定义"},"自定义工厂名称"));
+//        list.add(new TextSpinnerBean("装置名称", new String[]{"jite", "jie", "upm2", "own3","自定义"},"自定义装置名称"));
+//        list.add(new ItemEdit("height").setName("身高:"));
+//        list.add(new TextBean("工具参数"));
+//        for (int i = 0; i < 3; i++) {
+//            list.add(new EdittextBean("工具参数", ""));
+//        }
+//        list.add(new TextBean("螺旋参数"));
+//        for (int i = 0; i < 3; i++) {
+//            list.add(new EdittextBean("螺旋参数", ""));
+//        }
+//        list.add(new TextBean("测试参数"));
+//        for (int i = 0; i < 3; i++) {
+//            list.add(new EdittextBean("测试参数", ""));
+//        }
+//
+//        list.add(new TextSwitchBean("清洗是否达标",true));
+//        list.add(new TextSwitchBean("润滑是否达标",false));
+//
+
+
         list.add(new TextBean("法兰基本信息"));
         //list.add(new ImageTextBean("img2", "BBB"));
-        list.add(new TextSpinnerBean("公司名称", new String[]{"jite", "jie", "upm2", "own3","自定义"},"自定义公司名称"));
-        list.add(new TextSpinnerBean("工厂名称", new String[]{"jite", "jie", "upm2", "own3","自定义"},"自定义工厂名称"));
-        list.add(new TextSpinnerBean("装置名称", new String[]{"jite", "jie", "upm2", "own3","自定义"},"自定义装置名称"));
-        list.add(new ItemEdit("height").setName("身高:"));
+        list.add(new TextSpinnerBean("公司名称", new String[]{"jite", "jie", "upm2", "own3", "自定义"}, "自定义公司名称"));
+        list.add(new TextSpinnerBean("工厂名称", new String[]{"jite", "jie", "upm2", "own3", "自定义"}, "自定义工厂名称"));
+        list.add(new TextSpinnerBean("装置名称", new String[]{"jite", "jie", "upm2", "own3", "自定义"}, "自定义装置名称"));
+        list.add(new TextSpinnerBean("设备名称", new String[]{"jite", "jie", "upm2", "own3", "自定义"}, "自定义设备名称"));
+        list.add(new TextSpinnerBean("法兰名称", new String[]{"jite", "jie", "upm2", "own3", "自定义"}, "自定义法兰名称"));
+        list.add(new TextSpinnerBean("螺旋数量", new String[]{"jite", "jie", "upm2", "own3", "自定义"}, "自定义螺旋数量"));
+        list.add(new EdittextBean("螺旋材料", "请输入螺旋材料"));
+        //list.add(new ItemEdit("height").setName("身高:"));
         list.add(new TextBean("工具参数"));
-        for (int i = 0; i < 3; i++) {
-            list.add(new EdittextBean("工具参数", ""));
-        }
-        list.add(new TextBean("螺旋参数"));
-        for (int i = 0; i < 3; i++) {
-            list.add(new EdittextBean("螺旋参数", ""));
-        }
-        list.add(new TextBean("测试参数"));
-        for (int i = 0; i < 3; i++) {
-            list.add(new EdittextBean("测试参数", ""));
-        }
-
-        list.add(new TextSwitchBean("清洗是否达标",true));
-        list.add(new TextSwitchBean("润滑是否达标",false));
+        list.add(new TextSpinnerBean("工具类型", new String[]{"jite", "jie", "upm2", "own3", "自定义"}, "自定义工具类型"));
+        list.add(new TextSpinnerBean("工具型号", new String[]{"jite", "jie", "upm2", "own3", "自定义"}, "自定义工具型号"));
+        list.add(new EdittextBean("工具数量", "请输入工具数量"));
+        list.add(new TextSpinnerBean("工具覆盖", new String[]{"jite", "jie", "upm2", "own3", "自定义"}, "自定义工具型号"));
+        list.add(new EdittextBean("油压面积/mm²", "请输入油压面积"));
+        list.add(new EdittextBean("最大工作压力/Bar", "请输入工作压力"));
+        list.add(new EdittextBean("最大载荷/Nm", "请输入载荷"));
+        list.add(new EdittextBean("负载转换系数", "请输入转换系数"));
+        list.add(new TextBean("螺栓信息"));
+        list.add(new EdittextBean("屈服强度/Mpa", "请输入屈服强度"));
+        list.add(new EdittextBean("屈服强度(T)/Mpa", "请输入屈服强度"));
+        list.add(new EdittextBean("公称直径", "请输入公称直径"));
+        list.add(new EdittextBean("螺距", "请输入螺距"));
+        list.add(new EdittextBean("螺栓小径", "请输入螺栓小径"));
+        list.add(new EdittextBean("截面积/mm²", "请输入截面积"));
+        list.add(new EdittextBean("螺栓Y.P/Nm", "请输入螺栓Y.P"));
+        list.add(new EdittextBean("螺栓Y.P9(T)/Nm", "请输入螺栓Y.P"));
+        list.add(new TextBean("紧固信息"));
+        list.add(new EdittextBean("T1@BPressure/Nm", "请输入T1@BPressure"));
+        list.add(new EdittextBean("T2@Pressure/Nm", "请输入T2@Pressure"));
+        list.add(new EdittextBean("T3@Pressure/Nm", "请输入T3@Pressure"));
+        list.add(new EdittextBean("T4@Pressure/Nm", "请输入T4@Pressure"));
+        list.add(new EdittextBean("T1@A/Nm", "请输入T1@A"));
+        list.add(new EdittextBean("T1@B/Nm", "请输入T1@B"));
+        list.add(new EdittextBean("A Pressuere/Bar", "请输入A Pressuere"));
+        list.add(new EdittextBean("B Pressuere/Bar", "请输入B Pressuere"));
+        list.add(new TextSwitchBean("清洗是否达标", true));
+        list.add(new TextSwitchBean("润滑是否达标", false));
         adapter.setDataItems(list);
 
 

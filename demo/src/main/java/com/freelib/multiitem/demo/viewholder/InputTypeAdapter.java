@@ -32,7 +32,7 @@ public class InputTypeAdapter extends BaseViewHolderManager<EdittextBean> {
         if (!TextUtils.isEmpty(edittextBean.getDefValue())) {
             editText.setText(edittextBean.getDefValue());
         } else {
-            // editText.setText("2");
+             editText.setText("");
         }
         TextWatcher nameWatcher = new TextWatcher() {
 
