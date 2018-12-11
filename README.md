@@ -48,7 +48,7 @@ allprojects {
 在`Module`中添加：
 ```
 dependencies {
-    compile 'com.github.free46000:MultiItem:0.9.7'
+    compile 'com.github.gyymz1993:MultiItem:1.0.0'
 }
 ```
 
